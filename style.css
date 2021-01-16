@@ -1,0 +1,46 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    height: 100vh;
+    width: 100vw;
+}
+
+.box{
+    display: grid;
+    grid-column: 2/10;
+    grid-row: 3/9;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+.letter{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+input{
+    grid-row: 14/15;
+    grid-column: 2/15;
+}
+
+.display{
+    grid-row: 1/10;
+    grid-column: 2/15;
+    text-align: center;
+}
+
+.result{
+    grid-row: 10/11;
+    grid-column: 2/15;
+}
+.alphabet{
+    grid-row: 11/13;
+    grid-column: 2/15;
+}
