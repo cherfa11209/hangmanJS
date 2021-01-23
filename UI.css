@@ -1,0 +1,32 @@
+.UI{
+    grid-row: 14/19;
+    grid-column: 4/18;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.alphabet{
+    grid-row: 2/6;
+    grid-column: 2/10;
+    margin: 1%;
+}
+
+.letter{
+    height: 60%;
+    width: 7%;
+    margin: auto;
+}
+
+.enter{
+    height: 75%;
+    grid-row: 9/11;
+    grid-column: 7/9;
+}
+
+#bar{
+    height: 70%;
+    grid-row: 9/11;
+    grid-column: 3/6;
+    border: 2px double black;
+}

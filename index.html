@@ -5,23 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="display.css">
+    <link type="text/css" rel="stylesheet" href="UI.css">
 </head>
 <body>
 
     <div class="grid">
-        <h2>Welcome to hangman, the rules are that you must guess the entire word before you run out of chances, lose and the guy dies, win and he lives! Good luck.</h2>
+        <header>
+            <h2>
+                Welcome to hangman, the rules are that you must guess the entire word before you run out of chances, lose and the guy dies, win and he lives! 
+                Do you have what it takes to save him? Good luck.
+            </h2>
+        </header>
+        
         <div class="box">
-            <h3 class="result"> your word is: </h3><h3 class="secret_word"></h3>
+            <h3 class="result"> The secret word is: </h3><h3 class="secret_word"></h3>
+
             <div class="display">
-                 <h3 id="rope">|</h3>
-                 <h3 id="head">O</h3>
-                 <h3 id="rightarm">/</h3>
-                 <h3 id="torso">|</h3>
-                 <h3 id="leftarm">\</h3>
-                 <h3 id="rightleg">/</h3>
-                 <h3 id="leftleg">\</h3>
+                <div class="wrong-letters">
+                    <h5>1</h5>
+                    <h5>2</h5>
+                    <h5>3</h5>
+                    <h5>4</h5>
+                    <h5>5</h5>
+                    <h5>6</h5>
+                    <h5>7</h5>
+                </div>
+
+                <div class="hangman">
+                    <h3 id="rope"></h3>
+                    <h3 id="head"></h3>
+                    <h3 id="rightarm"></h3>
+                    <h3 id="torso"></h3>
+                    <h3 id="leftarm"></h3>
+                    <h3 id="rightleg"></h3>
+                    <h3 id="leftleg"></h3>
+                </div>
+
+                <div class="right-letters">
+                    <h5>1</h5>
+                    <h5>2</h5>
+                    <h5>3</h5>
+                    <h5>4</h5>
+                    <h5>5</h5>
+                    <h5>6</h5>
+                    <h5>7</h5>
+                </div>
             </div>
-            <h3 class="topic">Choose your topic:</h3><input id="city" type="radio" class="choice" name="city" value="city"><label id = "city2" for="city" class="choice">cities</label><input id="animals" type="radio" class="choice" name="animals" value="animals"><label id="animals2" for="animals" class="choice">animals</label><input id="foods" type="radio" class="choice" name="foods" value="foods"><label id="foods2" for="foods" class="choice">foods</label>
+        </div>
+
+            <div class="topic-choice">
+                <h3 class="choose">Choose your topic:</h3>
+                <button class="city">Cities</button>
+                <button class="animal">Animals</button>
+                <button class="food">Food</button>
+            </div>
+            
+        <div class="UI">
             <div class="alphabet">
                 <button class="letter">a</button>
                 <button class="letter">b</button>
@@ -52,8 +92,8 @@
             </div>
             <input type="text" id="bar"><button class="enter">Enter!</button>
         </div>
+        <footer></footer>
     </div>
-    <footer>~~~ github: Cherfa11209 ~~~ Email: sherifcherfa@gmail.com ~~~</footer>
     <script src="script.js">
 
     </script>
