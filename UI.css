@@ -21,12 +21,19 @@
 .enter{
     height: 75%;
     grid-row: 9/11;
-    grid-column: 7/9;
+    grid-column: 6/8;
+}
+
+#reset{
+    height: 75%;
+    grid-row: 9/11;
+    grid-column: 9/11;
+    background-color: blueviolet;
 }
 
 #bar{
     height: 70%;
     grid-row: 9/11;
-    grid-column: 3/6;
+    grid-column: 2/5;
     border: 2px double black;
 }
