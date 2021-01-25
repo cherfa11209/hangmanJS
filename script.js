@@ -13,7 +13,9 @@ const rightarm = document.getElementById('rightarm');
 const leftarm = document.getElementById('leftarm');
 const rightleg = document.getElementById('rightleg');
 const leftleg = document.getElementById('leftleg');
-const bg = document.getElementsByClassName('display')[0]
+const bg = document.getElementsByClassName('display')[0];
+const right = document.getElementsByClassName('right')[0];
+const wrong = document.getElementsByClassName('wrong')[0];
 let secretword = 0;
 
 let secretwordarray = [];
@@ -101,10 +103,12 @@ function check_for_match(value){
         secretwordarray[match] = value
         secret_arr[match] = '_'
         updateswa()
+        right.innerHTML = `the letter ${user_guess} is right!`
     } else {
         chances -= 1;
         console.log(chances)
         check_chances(chances)
+        wrong.innerHTML = `the letter ${user_guess} is wrong!`
     }
 }
 
