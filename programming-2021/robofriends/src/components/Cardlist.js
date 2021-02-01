@@ -1,5 +1,4 @@
 import react from 'react';
-import App from './App';
 import Card from './Card';
 import robots from './robots';
 

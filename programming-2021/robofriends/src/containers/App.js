@@ -1,7 +1,7 @@
 import react, {Component} from 'react';
-import robots from './robots' 
-import Cardlist from './Cardlist'
-import Searchbox from './Searchbox'
+import Scroll from '../components/Scroll'
+import Cardlist from '../components/Cardlist'
+import Searchbox from '../components/Searchbox'
 import './App.css'
 
 
@@ -11,17 +11,17 @@ class App extends Component{
     constructor(){
         super()
         this.state = {
-            robots: robots,
+            robots: [],
             searchfield: ""
         }
     }
 
+    componentDidMount(){
+      fetch('https://jsonplaceholder.typicode.com/users').then(response=> response.json()).then(users=>{this.setState({robots: users})})
+    }
+
     onSearchChange = (event) => {
         this.setState({ searchfield: event.target.value })
-        const filteredRobots = this.state.robots.filter((robot) => {
-          return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
-        })
-        console.log(filteredRobots);
     }
 
     render(){
@@ -32,7 +32,9 @@ class App extends Component{
         <div className="tc">
           <h1 className="">BABY FAM</h1>
           <Searchbox searchChange = {this.onSearchChange}/>
-          <Cardlist robots={filteredRobots} />
+          <Scroll>
+            <Cardlist robots={filteredRobots} />
+          </Scroll>
           <footer className="pv4 ph3 ph5-m ph6-l mid-gray"><a href="github.com/cherfa11209">Sherif Cherfa's Github
           <br/>
             Code along with Zero To mastery!
