@@ -1,21 +1,21 @@
 export const robots = [
     {
       id: 1,
-      name: 'sky baby',
-      username: 'sky_baby99x',
-      email: 'skybaby99x@gmail.com'
+      name: 'skytron',
+      username: 'sky_babyx',
+      email: 'skybabyx@gmail.com'
     },
     {
         id: 2,
-        name: 'amy baby',
-        username: 'amy_baby99x',
-        email: 'amybaby99x@gmail.com'
+        name: 'munchkin land',
+        username: 'amy_munchimunchi',
+        email: 'munchimunch@gmail.com'
     },
     {
         id: 3,
         name: 'ash baby',
-        username: 'ash_baby99x',
-        email: 'ash_baby99x@gmail.com'
+        username: 'ash_baby',
+        email: 'ash_baby@gmail.com'
     },
     {
         id: 4,

@@ -1,0 +1,17 @@
+h1{
+    color: rgb(238, 216, 220); 
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px 3px rgb(102, 101, 101);
+}
+
+img{
+    height: 12em;
+}
+
+footer{
+    background-color: lightgray;
+    margin-top: 50px;
+    border-top: 2px solid black;
+    color: (196, 146, 196);
+}
+
