@@ -12,20 +12,14 @@
 
     <div class="grid">
         <header>
-            <h2>
-                Welcome to hangman, the rules are that you must guess the entire word before you run out of chances, lose and the guy dies, win and he lives! 
-                Do you have what it takes to save him? Good luck.
-            </h2>
+            <h1>Welcome To Hangman!</h1>
         </header>
+
+        <div class="filler"></div>
         
         <div class="box">
-            <h3 class="result"> The secret word is: </h3><h3 class="secret_word"></h3>
 
             <div class="display">
-                <div class="wrong-letters">
-                    <h4 class="wrong"></h4>
-                </div>
-
                 <div class="hangman">
                     <h3 id="rope"></h3>
                     <h3 id="head"></h3>
@@ -35,56 +29,49 @@
                     <h3 id="rightleg"></h3>
                     <h3 id="leftleg"></h3>
                 </div>
-
-                <div class="right-letters">
-                    <h4 class="right"></h4>
-                </div>
             </div>
+
+           <div class="info-card">
+
+                <div class="secret_word">
+                    <h2 class="swd">Your secret word is: </h2>
+                    <hr>
+                    <h3 id="secret"></h3>
+                </div>
+
+                <div class="wrong-letters">
+                    <h2 class="ild">Invalid letters are: </h2>
+                    <hr>
+                    <ul id="wrong-letter-list">
+
+                    </ul>
+                </div>
+           </div>
         </div>
+
+        
+        
+        <div class="UI">
 
             <div class="topic-choice">
-                <h3 class="choose">Choose your topic:</h3>
-                <button class="city">Cities</button>
-                <button class="animal">Animals</button>
-                <button class="food">Food</button>
+                <h2 class="choose">Choose your topic:</h2>
+                <button id="city">Cities</button>
+                <button id="animal">Animals</button>
+                <button id="food">Food</button>
             </div>
-            
-        <div class="UI">
-            <div class="alphabet">
-                <button class="letter">A</button>
-                <button class="letter">B</button>
-                <button class="letter">C</button>
-                <button class="letter">D</button>
-                <button class="letter">E</button>
-                <button class="letter">F</button>
-                <button class="letter">G</button>
-                <button class="letter">H</button>
-                <button class="letter">I</button>
-                <button class="letter">J</button>
-                <button class="letter">K</button>
-                <button class="letter">L</button>
-                <button class="letter">M</button>
-                <button class="letter">N</button>
-                <button class="letter">O</button>
-                <button class="letter">P</button>
-                <button class="letter">Q</button>
-                <button class="letter">R</button>
-                <button class="letter">S</button>
-                <button class="letter">T</button>
-                <button class="letter">U</button>
-                <button class="letter">V</button>
-                <button class="letter">W</button>
-                <button class="letter">X</button>
-                <button class="letter">Y</button>
-                <button class="letter">Z</button>
+
+            <div class="input-field">
+                <h2>Please choose 1 letter:</h2>
+                <input type="text" id="bar" maxlength="1" placeholder="choose a letter">
+                <button id="enter">Enter</button>
+                <button type="button" id="reset"> RESET</button>
             </div>
-            <input type="text" id="bar"><button class="enter">Enter!</button>
-            <button type="button" id="reset"> RESET</button>
         </div>
-        <footer><a src="https://github.com/cherfa11209" target="_blank">Github: Cherfa11209</a> 
-            <br>
-            <a src="sherifcherfa@gmail.com">Email: Sherifcherfa@gmail.com</a></footer>
-    </div>
+
+        <div class="footer">
+            <p class="tag">Made by S. Cherfa</p>
+            <a href="https://github.com/cherfa11209" target="_blank"><img class="gh-icon" src="https://cdn.iconscout.com/icon/free/png-256/github-108-438008.png" alt="Github-link"/></a>
+        </div>
     <script src="script.js">
 
     </script>

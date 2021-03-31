@@ -1,29 +1,26 @@
-const letters = Array.from(document.querySelectorAll(".letter"));
-const bar = document.getElementById("bar");
-const enter = document.getElementsByClassName("enter")[0];
-const animal_btn = document.getElementsByClassName('animal')[0];
-const city_btn = document.getElementsByClassName('city')[0];
-const food_btn = document.getElementsByClassName('food')[0];
-const secret = document.getElementsByClassName("secret_word")[0];
-const reset = document.getElementById('reset');
-const rope = document.getElementById('rope');
-const head = document.getElementById('head');
-const torso = document.getElementById('torso');
-const rightarm = document.getElementById('rightarm');
-const leftarm = document.getElementById('leftarm');
-const rightleg = document.getElementById('rightleg');
-const leftleg = document.getElementById('leftleg');
-const bg = document.getElementsByClassName('display')[0];
-const right = document.getElementsByClassName('right')[0];
-const wrong = document.getElementsByClassName('wrong')[0];
-let secretword = 0;
+let rope = document.getElementById('rope')
+let head = document.getElementById('head')
+let torso = document.getElementById('torse')
+let rightarm = document.getElementById('rightarm')
+let leftarm = document.getElementById('leftarm')
+let rightleg = document.getElementById('rightleg')
+let leftleg = document.getElementById('leftleg')
 
+let secret = document.getElementById('secret')
+let wronglist = document.getElementById('wrong-letter-list')
+let city = document.getElementById('city')
+let animal = document.getElementById('animal')
+let food = document.getElementById('food')
+
+let bar = document.getElementById('bar')
+let enter = document.getElementById('enter')
+let reset = document.getElementById('reset')
+
+let secretword = 0;
 let secretwordarray = [];
 let user_guess = 0;
 let chances = 8;
 let joined = '';
-
-alert("Hello, and welcome to hangman, to start the game you must pick a topic: animals, cities or foods; once you do all that's left is to guess the word before the man gets hanged. Good luck!")
 
 function computer_chooses(){
     computer_choice = Math.floor(Math.random()*animals.length)
@@ -34,45 +31,39 @@ function updateswa(){
     secret.innerHTML = secretwordarray;
 }
 
-animal_btn.addEventListener('click', function(){
-    secretword = animals[computer_chooses()]
-    populate();
-    updateswa()
-    secret_arr = Array.from(secretword)
-    city_btn.disabled = true;
-    food_btn.disabled = true;
-})
-
-city_btn.addEventListener('click', function(){
-    secretword = cities[computer_chooses()]
-    populate();
-    updateswa()
-    secret_arr = Array.from(secretword)
-    animal_btn.disabled = true;
-    food_btn.disabled = true;
-})
-
-food_btn.addEventListener('click', function(){
-    secretword = foods[computer_chooses()]
-    populate();
-    updateswa();
-    secret_arr = Array.from(secretword)
-    city_btn.disabled = true;
-    animal_btn.disabled = true;
-})
-
 function populate(){
     for(i=0; i < secretword.length; i++){
        secretwordarray.push("_")
    }
+   console.log(secretwordarray)
 }
 
-letters.forEach((letter) =>{
-    letter.addEventListener('click', function(){
-        user_guess = letter.innerHTML;
-        check_for_match(user_guess)
-        check_for_winner()
-    })
+animal.addEventListener('click', function(){
+    secretword = animals[computer_chooses()]
+    populate();
+    updateswa()
+    secret_arr = Array.from(secretword)
+    city.disabled = true;
+    food.disabled = true;
+})
+
+
+city.addEventListener('click', function(){
+    secretword = cities[computer_chooses()]
+    populate();
+    updateswa()
+    secret_arr = Array.from(secretword)
+    animal.disabled = true;
+    food.disabled = true;
+})
+
+food.addEventListener('click', function(){
+    secretword = foods[computer_chooses()]
+    populate();
+    updateswa();
+    secret_arr = Array.from(secretword)
+    city.disabled = true;
+    animal.disabled = true;
 })
 
 enter.addEventListener("click", function(){
@@ -84,32 +75,33 @@ enter.addEventListener("click", function(){
 })
 
 function check_for_winner(){
-   join()
-   if(joined == secretword && chances > 0){
-        alert('You saved him')
-   } else if(joined != secretword && chances == 0){
-       alert('you lose this time')
-       secret.innerHTML = "he's dead now shame on you."
-   }
-}
-
-function join(){
-   joined = secretwordarray.join('');
-}
-
-function check_for_match(value){
-    if(secret_arr.includes(value)){
-        let match = secret_arr.indexOf(value)
-        secretwordarray[match] = value
-        secret_arr[match] = '_'
-        updateswa()
-        right.innerHTML = `the letter ${user_guess} is right!`
-    } else {
-        chances -= 1;
-        console.log(chances)
-        check_chances(chances)
-        wrong.innerHTML = `the letter ${user_guess} is wrong!`
+    join()
+    if(joined == secretword && chances > 0){
+         alert('You saved him')
+    } else if(joined != secretword && chances == 0){
+        alert('you lose this time')
+        secret.innerHTML = "he's dead now shame on you."
     }
+ }
+
+ function join(){
+    joined = secretwordarray.join('');
+ }
+ 
+ function check_for_match(value){
+     if(secret_arr.includes(value)){
+         let match = secret_arr.indexOf(value)
+         secretwordarray[match] = value
+         secret_arr[match] = '_'
+         updateswa()
+     } else {
+         chances -= 1;
+         console.log(chances)
+         check_chances(chances)
+         let wrongItem = document.createElement('li')
+         wrongItem.innerHTML = value
+         wronglist.appendChild(wrongItem);
+     }
 }
 
 function check_chances(chance){
@@ -147,7 +139,6 @@ function check_chances(chance){
 reset.addEventListener('click', function(){
     chances = 8;
     secretword = '';
-    secretwordarray = [];
     bg.style.backgroundImage = "url()";
     animal_btn.disabled = false;
     food_btn.disabled = false;
