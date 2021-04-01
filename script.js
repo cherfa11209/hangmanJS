@@ -39,7 +39,8 @@ function populate(){
 }
 
 animal.addEventListener('click', function(){
-    secretword = animals[computer_chooses()]
+    secretword = animals[computer_chooses()].toLocaleLowerCase()
+    console.log(secretword)
     populate();
     updateswa()
     secret_arr = Array.from(secretword)
@@ -49,7 +50,7 @@ animal.addEventListener('click', function(){
 
 
 city.addEventListener('click', function(){
-    secretword = cities[computer_chooses()]
+    secretword = cities[computer_chooses()].toLocaleLowerCase()
     populate();
     updateswa()
     secret_arr = Array.from(secretword)
@@ -58,7 +59,7 @@ city.addEventListener('click', function(){
 })
 
 food.addEventListener('click', function(){
-    secretword = foods[computer_chooses()]
+    secretword = foods[computer_chooses()].toLocaleLowerCase()
     populate();
     updateswa();
     secret_arr = Array.from(secretword)
@@ -67,7 +68,7 @@ food.addEventListener('click', function(){
 })
 
 enter.addEventListener("click", function(){
-    user_guess = bar.value;
+    user_guess = bar.value.toLocaleLowerCase();
     
     check_for_match(user_guess)
     bar.value = "";
